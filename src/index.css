@@ -1,0 +1,77 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Orbitron:wght@400;700;900&display=swap');
+
+@theme {
+  --color-background: #050505;
+  --color-background-alt: #0B0B0B;
+  --color-background-accent: #1A1208;
+  --color-gold-primary: #FFC247;
+  --color-gold-secondary: #FFD166;
+  --color-gold-deep: #E8A317;
+  --color-glow-primary: #FFB800;
+  --color-glow-secondary: #FFA500;
+  --color-glow-accent: #FF9F1C;
+  --color-chart-orange: #FF8C00;
+  
+  --font-display: "Orbitron", sans-serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-white font-sans overflow-x-hidden;
+    background-image: linear-gradient(180deg, #050505 0%, #0B0B0B 40%, #1A1208 100%);
+  }
+  
+  h1, h2, h3, h4 {
+    @apply font-display uppercase tracking-wider;
+  }
+}
+
+@utility glass {
+  @apply bg-white/5 backdrop-blur-lg border border-white/10;
+}
+
+@utility gold-glow {
+  box-shadow: 0 0 15px #FFB800, 0 0 30px rgba(255, 184, 0, 0.5);
+}
+
+@utility gold-glow-hover {
+  &:hover {
+    box-shadow: 0 0 20px #FFB800, 0 0 40px rgba(255, 184, 0, 0.6);
+  }
+}
+
+@utility text-glow-gold {
+  text-shadow: 0 0 10px rgba(255, 194, 71, 0.5);
+}
+
+@utility gold-gradient {
+  background: linear-gradient(90deg, #FFC247, #FFB800);
+}
+
+@utility progress-track {
+  background-color: #2A1A05;
+}
+
+@utility progress-fill {
+  background: linear-gradient(90deg, #FFC247, #FFA500);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E8A317;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FFC247;
+}
